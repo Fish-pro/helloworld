@@ -1,0 +1,14 @@
+# https://docs.korbit.ai/configuration/repository-settings
+# yaml-language-server: $schema=https://docs.korbit.ai/configuration/schema.v1.json
+version: "0.1"
+reviews:
+  schedule: "auto" # Options: "manual", "auto", "auto_no_drafts"
+  auto_review_target_base_branches: # Optional: working only for "auto" and "auto_no_drafts" schedules
+    - main # branch name
+    - feature/** # Glob pattern
+  do_not_auto_review_head_branches: # Optional: working only for "auto" and "auto_no_drafts" schedules
+    - feature/wip # branch name
+    - dev_/** # Glob pattern
+  ascii_art_when_no_issues_found: true
+pr_descriptions:
+  schedule: "manual" # Options: "manual", "auto"
